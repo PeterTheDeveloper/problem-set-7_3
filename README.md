@@ -42,10 +42,19 @@ The HTTP method that would fire would be a GET request to the server. This will 
 3. **You've been hired to do some work for Discogs, an application to help users track a vinyl record collection. A `Collection` has many `Albums`, and an `Album` has many collections via a join table called `Ownership`. You've been asked to build a feature that allows to remove an album from their collection. What HTTP Method/URL/controller action would you use to implement this feature?**
 <br>
 
+The HTTP method that will allow us to do this will be the DELETE method that is sent to the url path would be delete-album/collection/:id. To accomplish this the SQL query would be the following
 
+```sql
+DELETE * FROM collection 
+WHERE ownership.album_id = collection.album_id;
+```
 
 4. **Choose your favorite web application. What's an example of a one-to-many and many-to-many relationship that might exist within the app?**
 <br>
+
+My favorite web app is Dominos Pizza's.(dominos.com). An example of a one-to-many would be between the customers and their orders. Each customer can have any number of orders but each
+order will always ahve one customer. An example of a many-to-many relationship would be customers and nearby stores. A customer can have zero or many nearby dominos store in their area,
+just like how a dominos pizza store will always have zero or many customers.
 
 5. **Build a full CRUD, RESTful API using Express for a Todo List. A TodoList should have many items and belong to a user. Each endpoint should respond with the appropriate JSON response. Our API should support:**
    * **An index route to see a list of todos.**
@@ -55,3 +64,5 @@ The HTTP method that would fire would be a GET request to the server. This will 
    * **Create a Todo list item**
 
    **Deploy Your Project to Heroku and include a link here:**
+
+
